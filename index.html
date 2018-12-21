@@ -1,365 +1,215 @@
-<!DOCTYPE HTML>
+
+
+
+
+
+
+
+
+
+<!doctype html>
 <html lang="">
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
+</script>
+<link href="/plugins/code-theme/tomorrow.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="/plugins/github-markdown.css">
+
 <head><meta name="generator" content="Hexo 3.8.0">
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="LYH&#39;s blog">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <link rel="dns-prefetch" href="http://yoursite.com">
-    <!--SEO-->
-
-
-
-
-
-<meta name="robots" content="all">
-<meta name="google" content="all">
-<meta name="googlebot" content="all">
-<meta name="verify" content="all">
-    <!--Title-->
-
-
-<title>LYH&#39;s blog</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="LYH&#39;s blog" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
+  <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
+  
     
-
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
-
-
-
-
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
-
+      <link rel="stylesheet" href="/css/legend.css">
     
-
+  
 </head>
 
-</html>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
+<body id="body-home-bg">
+<div id="layout-content">
+  <div id="menu-outer-home">
+  <div id="menu-inner">
+    
+    
+    <div id="site-title">
+      LYH's blog
+    </div>
+    
+
+     
+    <div>
+    
+      
+      <a href="/">首页</a>
+      
+    
+      
+      <a href="/archives">归档</a>
+      
+    
+    </div>
+  </div>
+</div> 
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+<video id="bgvideo" autoplay playsinline="" loop poster="/images/background.png">
+  <source src="http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.mp4?v=1418162238190" type="video/mp4">
+</video>
+
+
+
+
+  <div id="play-button">
+  <img id="play-img" src="/images/playback_play.png">
+</div>
+<audio id="bgaudio" loop="loop" preload="none"> 
+  <source src="http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.m4a?v=1418162240715" type="audio/mpeg">
+</audio>
+
+<script>
+$(document).ready(function(){
+  //播放按钮点击
+  var audio = $("#bgaudio")[0];
+  var img = $("#play-img")[0];
+  $("#play-button").click(function(){ 
+    if (audio.paused || audio.ended) {
+      audio.play();
+      img.src = "/images/playback_pause.png";
+    } else {
+      audio.pause();
+      img.src = "/images/playback_play.png";
+    }
+  });
+});
+</script>
+
+
+
+
+<div id="me-button">
+		<img id="play-img" src="/images/me_n.png">
+		
+</div>
+
+<div id="social-div">
+
+
+    
+    
+    <a class="social-a" href="http://weibo.com/3169700852/" target="_blank">
+        <img src="/images/weibo.png">
+    </a>
+    
+
+    
+    
+    <a class="social-a" href="https://github.com/iHongRen" target="_blank">
+        <img src="/images/github.png">
+    </a>
+    
+
+    
+    
+    <a class="social-a" href="https://twitter.com/ihongren" target="_blank">
+        <img src="/images/twitter.png">
+    </a>
+    
+
+
+</div>
+
+
+<div id="about-me">
+  <div id="about-me-inner">
+    <article class="markdown-body"></article>
+  </div>
+</div>
+
+
+<!--[if lt IE 9]>
+<script>
+	document.createElement('video');
+</script>
 <![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
 
-<body>
-    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title="Yaohuan Luo">
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
+
+<script>
+
+$(document).ready(function(){
+  //判断是否该显示’关于我‘
+  if( "home_about"  == 'home_about') {
+    $("#about-me").hide(0);
+
+    //加载about(关于)读取文件
+    var s = $('article').html();
+    if (s.length < 2) {
+      var url = window.location.protocol+"//"+window.location.host+"/about/";
+      $.ajax({ 
+          type: "GET", 
+          url: url, 
+          dataType: "html", 
+          success: function (data) { 
+            $('article').html($(data).find('article').html());//解析about的html
+            $("#about-me").css({"visibility": "visible"}).delay(100);
+            $("#about-me").slideToggle('slow');
+          }
+      }); 
+      }
+
+    //个人按钮点击，隐藏和显示关于界面
+    $("#me-button").click(function(){ 
+      $("#social-div").slideToggle();
+      $("#about-me").slideToggle();
+    });
+  }
+});
+</script>
+
+
+
     </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://yoursite.com">LYH&#39;s blog</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content ">
-                    
-    <div class="carousel">
-        <a href="javascript:" target="_blank">
-            <img src="/./img/head-img.jpg" alt="">
-        </a>
-    </div>
-
-
-
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2018/12/21/hello-world/">Hello World</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2018年12月21日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2018/12/21/hello-world/" class="btn btn-default">Read</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-
-
-
-
-                </main>
-                
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
-    <div class="widget">
-        <h3 class="title">Search</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Notification</h3>
-        <div class="notification">
-            <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br>
-    支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-      <h3 class="title">Social</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-			    	<i class="qq fa fa-qq"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="微信" target="_blank">
-			    	<i class="weixin fa fa-weixin"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-			    	<i class="users fa fa-users"></i>
-			    </a>
-            
-	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-			    	<i class="feed fa fa-feed"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/"><i class="fa" aria-hidden="true">2018年12月</i></a><span class="archive-list-count">1</span></li></ul>
-    </div>
-
-
-        
-        
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Friends</h3>
-        <div class="content friends-link">
-        
-            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
-
-
-
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
-    
-</div>
-
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2017
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 
-	<script src="/js/search.js?rev=@@hash"></script>
+
+<div id="bottom-outer">
+  
+  <div id="bottom-inner">
+    Yaohuan Luo 
+    ©2018 |Powered by  
+    <a href="http://hexo.io" target="_blank">Hexo</a> with theme 
+    <a href="https://github.com/iHongRen/legend" target="_blank">legend</a>
+  </div>
+    
+    
+    
+      <a href="/atom.xml">
+      
+      <img src="/images/rss.png" height="18" width="18">
+      
+</a></div> 
 
 
+  
+  
+    <script src="/js/legend.js"></script>
+  
 
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
 
 </body>
 </html>
+
+
+<script>
+$(window).on('load', function(){
+   $('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+   prettyPrint();
+ });
+</script>
+
