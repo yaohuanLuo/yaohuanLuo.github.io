@@ -230,6 +230,325 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Redis数据库字符串相关指令" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/28/Redis数据库字符串相关指令/" class="article-date">
+      <time datetime="2018-12-28T11:35:13.453Z" itemprop="datePublished">2018-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/Redis数据库字符串相关指令/">Redis数据库字符串相关指令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Redis数据库部分命令"><a href="#Redis数据库部分命令" class="headerlink" title="Redis数据库部分命令"></a>Redis数据库部分命令</h1><h2 id="字符串相关指令"><a href="#字符串相关指令" class="headerlink" title="字符串相关指令"></a>字符串相关指令</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">用法</th>
+<th style="text-align:center">指令作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">append</td>
+<td style="text-align:center">append 键 值</td>
+<td style="text-align:center">向键对应的值中追加内容</td>
+</tr>
+<tr>
+<td style="text-align:center">bitcount</td>
+<td style="text-align:center">bitcount key [start] [end]</td>
+<td style="text-align:center">计算(指定位置)的字符中为1的比特位的数量</td>
+</tr>
+<tr>
+<td style="text-align:center">bitop</td>
+<td style="text-align:center">bitop 参数 destkey key1 key2 …</td>
+<td style="text-align:center">将ky1与key2进行相对应的逻辑运算，并将结果赋给destkey</td>
+</tr>
+<tr>
+<td style="text-align:center">decr</td>
+<td style="text-align:center">decr key</td>
+<td style="text-align:center">将key中存储的数字的值减1</td>
+</tr>
+<tr>
+<td style="text-align:center">decrby</td>
+<td style="text-align:center">decrby key num</td>
+<td style="text-align:center">将key中存储的数字的值减少num</td>
+</tr>
+<tr>
+<td style="text-align:center">get</td>
+<td style="text-align:center">get key</td>
+<td style="text-align:center">获取key对应的value值</td>
+</tr>
+<tr>
+<td style="text-align:center">gitbit</td>
+<td style="text-align:center">gitbit key offset</td>
+<td style="text-align:center">获取key对应的value值指定位置的bit值</td>
+</tr>
+<tr>
+<td style="text-align:center">getrange</td>
+<td style="text-align:center">gitrange key start end</td>
+<td style="text-align:center">获取指定的索引位置的子字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">getset</td>
+<td style="text-align:center">getset key value</td>
+<td style="text-align:center">获取key的上一个值并且赋新的value值(key存在并且有值)</td>
+</tr>
+<tr>
+<td style="text-align:center">incr</td>
+<td style="text-align:center">incr key</td>
+<td style="text-align:center">将key中的数字的值加1</td>
+</tr>
+<tr>
+<td style="text-align:center">incrby</td>
+<td style="text-align:center">incrby key num</td>
+<td style="text-align:center">将key中的数字的值增加num(整数)</td>
+</tr>
+<tr>
+<td style="text-align:center">incrbyfloat</td>
+<td style="text-align:center">incrbyfloat key num</td>
+<td style="text-align:center">将key中的数字的值增加num(小数)</td>
+</tr>
+<tr>
+<td style="text-align:center">mget</td>
+<td style="text-align:center">mget key …</td>
+<td style="text-align:center">同时查询多个key对对应的值</td>
+</tr>
+<tr>
+<td style="text-align:center">mset</td>
+<td style="text-align:center">mset key value …</td>
+<td style="text-align:center">同时给一个或多个键值对赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">msetnx</td>
+<td style="text-align:center">msetnx key value …</td>
+<td style="text-align:center">同时给一个或多个键值对赋值，但是只要有一个键值对已存在，则所有的赋值失效</td>
+</tr>
+<tr>
+<td style="text-align:center">psetex</td>
+<td style="text-align:center">psetex key num value</td>
+<td style="text-align:center">创建键值对，并且设置生存时间为num毫秒</td>
+</tr>
+<tr>
+<td style="text-align:center">set</td>
+<td style="text-align:center">set key value</td>
+<td style="text-align:center">给key关联字符串value</td>
+</tr>
+<tr>
+<td style="text-align:center">setbit</td>
+<td style="text-align:center">setbit key offset value</td>
+<td style="text-align:center">给key指定的位置赋予bit值（0或1）</td>
+</tr>
+<tr>
+<td style="text-align:center">setex</td>
+<td style="text-align:center">setex key time value</td>
+<td style="text-align:center">将key与value关联，并且设置key的生存时间为time</td>
+</tr>
+<tr>
+<td style="text-align:center">setnx</td>
+<td style="text-align:center">setnx key value</td>
+<td style="text-align:center">将value赋给key，若key存在则不做任何操作</td>
+</tr>
+<tr>
+<td style="text-align:center">setrange</td>
+<td style="text-align:center">setrange key index value</td>
+<td style="text-align:center">对key从索引位置index开始使用value替换(仅替换value长度对应位置的字符)</td>
+</tr>
+<tr>
+<td style="text-align:center">strlen</td>
+<td style="text-align:center">strlen key</td>
+<td style="text-align:center">返回key对应字符串的长度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><p>语法：append key value</p>
+<p>作用：</p>
+<pre><code>当key存在的时候，直接在对应值的后面追加value；
+当key不存在的时候，直接将key的值设定为value，效果与set key value类似。
+</code></pre><p>例如：</p>
+<p>key不存在时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">47.106.35.41:6379&gt; append appends appends</span><br><span class="line">(integer) 7</span><br><span class="line">47.106.35.41:6379&gt; get appends</span><br><span class="line">&quot;appends&quot;</span><br></pre></td></tr></table></figure>
+<p>当key不存在时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">47.106.35.41:6379&gt; get appends</span><br><span class="line">&quot;appends&quot;</span><br><span class="line">47.106.35.41:6379&gt; append appends 123</span><br><span class="line">(integer) 10</span><br><span class="line">47.106.35.41:6379&gt; get appends</span><br><span class="line">&quot;appends123&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="bitcount"><a href="#bitcount" class="headerlink" title="bitcount"></a>bitcount</h3><p>语法：bitcount key [start] [end]</p>
+<p>作用：</p>
+<pre><code>当设置了开始值start和结束值end后，则会查询key对应的value值索引范围内的字符中比特值为1的数量和，其中start、end参数可以为负值，功能与字符串的索引类似；
+当未设置start、end值时，则会查询key对应的value值的所有字符串中比特值为1的数量和。
+当key对应的value值不存在时，结果为0.
+</code></pre><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">当value有值且未设置start、end值：</span><br><span class="line">47.106.35.41:6379&gt; get username</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">47.106.35.41:6379&gt; bitcount username</span><br><span class="line">(integer) 21</span><br><span class="line"></span><br><span class="line">当value有值且设置了start、end值：</span><br><span class="line">47.106.35.41:6379&gt; get username</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">47.106.35.41:6379&gt; bitcount username 1 3</span><br><span class="line">(integer) 12</span><br><span class="line"></span><br><span class="line">当没有value值时：</span><br><span class="line">47.106.35.41:6379&gt; get aaa</span><br><span class="line">(nil)</span><br><span class="line">47.106.35.41:6379&gt; bitcount aaa</span><br><span class="line">(integer) 0</span><br></pre></td></tr></table></figure>
+<h3 id="bitop"><a href="#bitop" class="headerlink" title="bitop"></a>bitop</h3><p>语法：bitop 参数 destkey key1 key2 …</p>
+<p>作用：</p>
+<pre><code>在指令中的参数共有四个：and、or、xor、not，其作用分别是：
+and    - 将后面的key进行逻辑与运算，并且将最后的值赋给destket;
+or    - 将后面的key进行逻辑或运算，并且将最后的值赋给destket;
+xor    - 将后面的key进行逻辑异或运算，并且将最后的值赋给destkey;
+not    - 将后面的key进行逻辑非运算，并且将最后的值赋给destkey，注意，这儿的key只有一个！！！
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">首先创建两个键值对</span><br><span class="line">127.0.0.1:6379&gt; set key1 abcd</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; set key2 dcba</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">and参数：</span><br><span class="line">127.0.0.1:6379&gt; bitop and destkey key1 key2</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; get destkey</span><br><span class="line">&quot;`bb`&quot;</span><br><span class="line"></span><br><span class="line">or参数：</span><br><span class="line">127.0.0.1:6379&gt; bitop or destkey key1 key2</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; get destkey</span><br><span class="line">&quot;ecce&quot;</span><br><span class="line"></span><br><span class="line">xor参数：</span><br><span class="line">127.0.0.1:6379&gt; bitop xor destkey key1 key2</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; get destkey</span><br><span class="line">&quot;\x05\x01\x01\x05&quot;</span><br><span class="line"></span><br><span class="line">not参数：</span><br><span class="line">127.0.0.1:6379&gt; bitop not destkey key1</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; get destkey</span><br><span class="line">&quot;\x9e\x9d\x9c\x9b&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="decr"><a href="#decr" class="headerlink" title="decr"></a>decr</h3><p>语法：decr key</p>
+<p>作用：</p>
+<pre><code>如果key不存在，则会先对key进行赋默认值，默认值为0，再进行减1运算；
+如果key存在且值为数字时，就会单纯将key对应数字的value值减1；
+如果key存在但值不为数字时，会报错。
+</code></pre><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">当key存在时：</span><br><span class="line">127.0.0.1:6379&gt; set key1 123</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; decr key1</span><br><span class="line">(integer) 122</span><br><span class="line"></span><br><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; decr key2</span><br><span class="line">(integer) -1</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;-1&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="decrby"><a href="#decrby" class="headerlink" title="decrby"></a>decrby</h3><p>语法：decrby key num</p>
+<p>作用：</p>
+<pre><code>当key不存在，则会先对key进行赋默认值，默认值为0，再进行减少num运算；
+当key存在时，就会单纯将key对应数字的value值减num。
+当key存在但值不为数字时，会报错。
+</code></pre><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">当key存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;122&quot;</span><br><span class="line">127.0.0.1:6379&gt; decrby key1 20</span><br><span class="line">(integer) 102</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;102&quot;</span><br><span class="line"></span><br><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get ley2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; decrby key2 20</span><br><span class="line">(integer) -20</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;-20&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>语法：get key</p>
+<p>作用：</p>
+<pre><code>当key存在时，直接返回key对应的value的值；
+当key不存在时，返回null；
+当value值不为字符串时，就会报错。
+</code></pre><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">(nil)</span><br><span class="line"></span><br><span class="line">当key存在且是字符串时：</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;abvc&quot;</span><br><span class="line"></span><br><span class="line">当key存在但不是字符串时：</span><br><span class="line">127.0.0.1:6379&gt; LPUSH key1 redis mongodb mysql</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">(error) WRONGTYPE Operation against a key holding the wrong kind of value时：</span><br></pre></td></tr></table></figure>
+<h3 id="getbit"><a href="#getbit" class="headerlink" title="getbit"></a>getbit</h3><p>语法：getbit key offset</p>
+<p>作用：</p>
+<pre><code>获取key对应的value上，指定位置的bit值。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setbit key2 10 1</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; getbit key2 3</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; getbit key2 10</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+<h3 id="getrange"><a href="#getrange" class="headerlink" title="getrange"></a>getrange</h3><p>语法：getrange key start end</p>
+<p>作用：</p>
+<pre><code>获取指定的位置的子字符串，索引位置从start至end，包括start和end本身对应的索引位置的值，且start与end可以为负数。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;hello,word!&quot;</span><br><span class="line"></span><br><span class="line">获取中间部分子串：</span><br><span class="line">127.0.0.1:6379&gt; getrange key1 0 6</span><br><span class="line">&quot;hello,w&quot;</span><br><span class="line"></span><br><span class="line">获取的索引为负：</span><br><span class="line">127.0.0.1:6379&gt; getrange key1 0 -1</span><br><span class="line">&quot;hello,word!&quot;</span><br><span class="line"></span><br><span class="line">获取的索引大于字符串长度：</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;hello,word!&quot;</span><br><span class="line">127.0.0.1:6379&gt; getrange key1 0 100</span><br><span class="line">&quot;hello,word!&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="getset"><a href="#getset" class="headerlink" title="getset"></a>getset</h3><p>语法：getset key value</p>
+<p>作用：</p>
+<pre><code>当key存在时，获取key的值，并且将新的value值覆盖key的上一个值；
+当key存在但值不为字符串类型时，会返回一个错误；
+当key不存在时，返回nil，并将新的值赋给key。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当key存在且key中值为字符串类型：</span><br><span class="line">127.0.0.1:6379&gt; get username</span><br><span class="line">&quot;hellokitty&quot;</span><br><span class="line">127.0.0.1:6379&gt; getset username hello</span><br><span class="line">&quot;hellokitty&quot;</span><br><span class="line">127.0.0.1:6379&gt; get username</span><br><span class="line">&quot;hello&quot;</span><br><span class="line"></span><br><span class="line">当key存在但key中值不为字符串类型：</span><br><span class="line">127.0.0.1:6379&gt; LPUSH key1 redis mongodb mysql</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; getset key1 123</span><br><span class="line">(error) WRONGTYPE Operation against a key holding the wrong kind of value</span><br><span class="line"></span><br><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; getset key2 100</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;100&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="incr"><a href="#incr" class="headerlink" title="incr"></a>incr</h3><p>语法：incr key</p>
+<p>作用：</p>
+<pre><code>当key存在且key中存储的值为数字时，会将值加1；
+当key不存在时，会先将key赋值为0，再将值加1；
+当key存在但值不为数字时，会报错。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; incr key2</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;1&quot;</span><br><span class="line"></span><br><span class="line">当key存在且值为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;1&quot;</span><br><span class="line">127.0.0.1:6379&gt; incr key2</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;2&quot;</span><br><span class="line"></span><br><span class="line">当key存在但不为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;100aaa&quot;</span><br><span class="line">127.0.0.1:6379&gt; incr key2</span><br><span class="line">(error) ERR value is not an integer or out of range</span><br></pre></td></tr></table></figure>
+<h3 id="incrby"><a href="#incrby" class="headerlink" title="incrby"></a>incrby</h3><p>语法：incrby key num</p>
+<p>作用：</p>
+<pre><code>当key不存在时，会先将key赋值为0，再将值加num；
+当key存在且key中存储的值为数字时，会将值加num；
+当key存在但值不为数字时，会报错。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; incrby key2 10</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;10&quot;</span><br><span class="line"></span><br><span class="line">当key存在且值为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;10&quot;</span><br><span class="line">127.0.0.1:6379&gt; incrby key2 10</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;20&quot;</span><br><span class="line"></span><br><span class="line">当key存在但不为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;100aaa&quot;</span><br><span class="line">127.0.0.1:6379&gt; incrby key2 10</span><br><span class="line">(error) ERR value is not an integer or out of range</span><br></pre></td></tr></table></figure>
+<h3 id="incrbyfloat"><a href="#incrbyfloat" class="headerlink" title="incrbyfloat"></a>incrbyfloat</h3><p>语法：incrbyfloat key num</p>
+<p>作用：</p>
+<pre><code>当key不存在时，会先将key赋值为0，再将值加num；
+当key存在且key中存储的值为数字时，会将值加num；
+当key存在但值不为数字时，会报错。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; incrbyfloat key2 10.5</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;10.5&quot;</span><br><span class="line"></span><br><span class="line">当key存在且值为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;10.5&quot;</span><br><span class="line">127.0.0.1:6379&gt; incrbyfloat key2 10.5</span><br><span class="line">&quot;21&quot;</span><br><span class="line"></span><br><span class="line">当key存在但值不为数字时：</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;21aaa&quot;</span><br><span class="line">127.0.0.1:6379&gt; incrbyfloat key2 10.5</span><br><span class="line">(error) ERR value is not a valid float</span><br></pre></td></tr></table></figure>
+<h3 id="mget"><a href="#mget" class="headerlink" title="mget"></a>mget</h3><p>语法：mget key …</p>
+<p>作用：</p>
+<pre><code>可以同时查询多个key所对应的值。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; mget key1 key2</span><br><span class="line">127.0.0.1:6379&gt; mget key1 key2</span><br><span class="line">1) &quot;21&quot;</span><br><span class="line">2) &quot;21aaa&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="mset"><a href="#mset" class="headerlink" title="mset"></a>mset</h3><p>语法：mset key value …</p>
+<p>作用：</p>
+<pre><code>可以同时给多个键值对赋值。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; mset key1 123 key2 abc</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;123&quot;</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;abc&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="msetnx"><a href="#msetnx" class="headerlink" title="msetnx"></a>msetnx</h3><p>语法：msetnx key value …</p>
+<p>作用：</p>
+<pre><code>当msetnx后面的所有key不存在的时候，效果与mset一样；
+当msetnx后面的key只要有一个存在，整个语句的赋值都无效。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">当msetnx后面的所有key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; msetnx key3 aaa key4 bbb</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; mget key3 key4</span><br><span class="line">1) &quot;aaa&quot;</span><br><span class="line">2) &quot;bbb&quot;</span><br><span class="line"></span><br><span class="line">当msetnx后面的key有存在的时：</span><br><span class="line">127.0.0.1:6379&gt; msetnx key4 123</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; get key4</span><br><span class="line">&quot;bbb&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="psetex"><a href="#psetex" class="headerlink" title="psetex"></a>psetex</h3><p>语法：psetex key num value</p>
+<p>作用：</p>
+<pre><code>创建键值对，并且将键值对的生存时间设置为num毫秒。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; psetex key5 5000 abc</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; ttl key5</span><br><span class="line">(integer) 1	# 指生存时间剩余1秒</span><br><span class="line">127.0.0.1:6379&gt; ttl key5</span><br><span class="line">(integer) -2</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>语法：set key value</p>
+<p>作用：</p>
+<pre><code>当key不存在时，直接将value关联到key；
+当key存在时，会用value覆盖key的旧值。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; set key1 abc</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;abc&quot;</span><br><span class="line"></span><br><span class="line">当key存在时：</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;abc&quot;</span><br><span class="line">127.0.0.1:6379&gt; set key1 123</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;123&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="setbit"><a href="#setbit" class="headerlink" title="setbit"></a>setbit</h3><p>语法：setbit key offset value</p>
+<p>作用：</p>
+<pre><code>当key不存在时，会自动生成一个新的字符串；
+当key存在时，对key对应值的指定位置赋bit(0或1),注意offset参数的值必须大于或等于0.
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setbit key3 10 1</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; getbit key3 1</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; getbit key3 10</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+<h3 id="setex"><a href="#setex" class="headerlink" title="setex"></a>setex</h3><p>语法：setex key time value</p>
+<p>作用：</p>
+<pre><code>当key不存在时，将key与value关联并且给key设置生存时间为time秒；
+当key存在时，会覆盖原本的value值并设置生存时间为time秒。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setex key1 10 aaa</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; ttl key1</span><br><span class="line">(integer) 5	# 存活时间还剩5秒</span><br><span class="line">127.0.0.1:6379&gt; ttl key1</span><br><span class="line">(integer) -2	# 死亡</span><br></pre></td></tr></table></figure>
+<h3 id="setnx"><a href="#setnx" class="headerlink" title="setnx"></a>setnx</h3><p>语法：setnx key value</p>
+<p>作用：</p>
+<pre><code>当key不存在时，将key与value关联；
+当key存在时，不会做任何操作。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; setnx key2 abc</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;abc&quot;</span><br><span class="line"></span><br><span class="line">当key存在时：</span><br><span class="line">127.0.0.1:6379&gt; setnx key2 123</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; get key2</span><br><span class="line">&quot;abc&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="setrange"><a href="#setrange" class="headerlink" title="setrange"></a>setrange</h3><p>语法：setrange key index value</p>
+<p>作用：</p>
+<pre><code>当key不存在时，会将key按空白字符串进行处理，从index索引位置开始替换，前面的添加空白字符，后面的按照value值添加；
+当key存在时，会在key的index索引位置开始，用value进行替换，如果value的长度不到key对应值的结尾，则只会替代对应位置的字符，如果value的长度超过key对应值的结尾，依旧会按相应位置进行替换。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; setrange key3 5 asdfads</span><br><span class="line">(integer) 12</span><br><span class="line">127.0.0.1:6379&gt; get key3</span><br><span class="line">&quot;\x00\x00\x00\x00\x00asdfads&quot;</span><br><span class="line"></span><br><span class="line">当key存在且足够长时：</span><br><span class="line">127.0.0.1:6379&gt; set key1 &quot;hello word&quot;</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;hello word&quot;</span><br><span class="line">127.0.0.1:6379&gt; setrange key1 6 aa</span><br><span class="line">(integer) 10</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;hello aard&quot;</span><br><span class="line"></span><br><span class="line">当key存在不够长时：</span><br><span class="line">127.0.0.1:6379&gt; set key3 aaa</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; setrange key3 3 bbb</span><br><span class="line">(integer) 6</span><br><span class="line">127.0.0.1:6379&gt; get key3</span><br><span class="line">&quot;aaabbb&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen"></a>strlen</h3><p>语法：strlen key</p>
+<p>作用：</p>
+<pre><code>返回key对应字符串的长度，当key不存在时，返回0，当key对应的值不是字符串时，会报错。
+</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">当key不存在时：</span><br><span class="line">127.0.0.1:6379&gt; strlen key4</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">当key存在且是字符串时：</span><br><span class="line">127.0.0.1:6379&gt; get key3</span><br><span class="line">&quot;aaabbb&quot;</span><br><span class="line">127.0.0.1:6379&gt; strlen key3</span><br><span class="line">(integer) 6</span><br><span class="line"></span><br><span class="line">当key存在但不是字符串时：</span><br><span class="line">127.0.0.1:6379&gt; lpush key4 100 200 300</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; strlen key4</span><br><span class="line">(error) WRONGTYPE Operation against a key holding the wrong kind of value</span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python学习/">Python学习</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-markdown简述" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
